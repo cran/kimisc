@@ -1,6 +1,6 @@
 #' @title Replaces NA values
-#' @description This (vectorized) function returns the first 
-#'   non-\code{NA} argument, similar to the SQL function 
+#' @description This (vectorized) function returns the first
+#'   non-\code{NA} argument, similar to the SQL function
 #'   \code{COALESCE}. If a vector or matrix is passed as first argument,
 #'   the remaining arguments are recycled to generate a vector/matrix of
 #'   the same dimension, and coalescing is done element by element.
@@ -23,9 +23,10 @@ coalesce.na <- function(x, ...) {
       x[is.na(x)] <- y
     } else {
       if (x.len %% y.len != 0)
-        warning('object length is not a multiple of first object length')
+        warning("object length is not a multiple of first object length")
       pos <- which(is.na(x))
-      x[pos] <- y[(pos - 1) %% y.len + 1]
+      ypos <- (pos - 1) %% y.len + 1
+      x[pos] <- y[ypos]
     }
   }
   x

@@ -3,7 +3,8 @@
 #'   script.  This is an attempt to circumvent this limitation by applying
 #'   heuristics (such as call stack and argument inspection) that work in many
 #'   cases.
-#' @details This function currently works only if the script was \code{source}d
+#' @details This functions currently work only if the script was \code{source}d,
+#'   processed with \code{knitr},
 #'   or run with \code{Rscript} or using the \code{--file} parameter to the
 #'   \code{R} executable.  For code run with \code{Rscript}, the exact value
 #'   of the parameter passed to \code{Rscript} is returned.
@@ -18,29 +19,44 @@
 thisfile <- function() {
   if (!is.null(res <- thisfile_source())) res
   else if (!is.null(res <- thisfile_rscript())) res
+  else if (!is.null(res <- thisfile_knit())) res
   else NULL
 }
 
-# Helper functions
+#' @rdname thisfile
+#' @export
 thisfile_source <- function() {
   for (i in -(1:sys.nframe())) {
-    if (identical(sys.function(i), base::source))
+    if (identical(args(sys.function(i)), args(base::source)))
       return (normalizePath(sys.frame(i)$ofile))
   }
 
   NULL
 }
 
+#' @rdname thisfile
+#' @export
 thisfile_rscript <- function() {
-  cmdArgs <- commandArgs(trailingOnly = FALSE)
-  cmdArgsTrailing <- commandArgs(trailingOnly = TRUE)
-  cmdArgs <- cmdArgs[seq.int(from=1, length.out=length(cmdArgs) - length(cmdArgsTrailing))]
-  res <- gsub("^(?:--file=(.*)|.*)$", "\\1", cmdArgs)
+  cmd_args <- commandArgs(trailingOnly = FALSE)
+  cmd_args_trailing <- commandArgs(trailingOnly = TRUE)
+  leading_idx <-
+    seq.int(from=1, length.out=length(cmd_args) - length(cmd_args_trailing))
+  cmd_args <- cmd_args[leading_idx]
+  res <- gsub("^(?:--file=(.*)|.*)$", "\\1", cmd_args)
 
   # If multiple --file arguments are given, R uses the last one
   res <- tail(res[res != ""], 1)
   if (length(res) > 0)
     return (res)
+
+  NULL
+}
+
+#' @rdname thisfile
+#' @export
+thisfile_knit <- function() {
+  if (requireNamespace("knitr"))
+    return (knitr::current_input())
 
   NULL
 }

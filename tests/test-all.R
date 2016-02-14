@@ -1,4 +1,4 @@
 library(testthat)
-library(kimisc)
 
 test_check("kimisc")
+test_examples()
