@@ -1,3 +1,14 @@
+<!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
+
+# kimisc 1.0.0 (2024-11-30)
+
+## Chore
+
+- Upkeep (#14, #16).
+
+- Relicense as MIT (#14, #16).
+
+
 kimisc 0.4 (2017-12-17)
 ===
 
