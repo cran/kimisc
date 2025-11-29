@@ -1,5 +1,16 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# kimisc 1.0.1 (2025-11-28)
+
+## Chore
+
+- Remove pryr dependency, hard-deprecate `vswitch()` (#37, #38).
+
+## Documentation
+
+- Update `thisfile()` deprecation to point to the whereami package (#10, #41).
+
+
 # kimisc 1.0.0 (2024-11-30)
 
 ## Chore

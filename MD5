@@ -1,7 +1,7 @@
-402c91240ba6012b1e931bd8f266e3af *DESCRIPTION
+808ec2323d35dc7b96ea4e8fd6add781 *DESCRIPTION
 e972c7c33e43011cb815780bab427bbd *LICENSE
 362ce86542eac359c5b40dd4211507a5 *NAMESPACE
-234cfd36ce7fd56f7a96975127202a1e *NEWS.md
+cbaa2d51d905e1545a50fa8f96d1e5d2 *NEWS.md
 2b1772a880b7ebad47ab75bae38c7b26 *R/coalesce_na.R
 0012088b822ffc8bacd03bf9f217b6fe *R/cut.R
 2e6fdc25c8df12c653aca30f70f4202f *R/deprecate.R
@@ -15,9 +15,9 @@ b282c0c69d3f27ccce7ce2442769b2f1 *R/list_to_df.R
 b4ce85ee029c4ba5d1a5b05010378c0e *R/ofactor.R
 64ffc8778ded3c48c52d550fd05c99dc *R/sample_data_frame.R
 9398b3e314587a96c8456323fa7b75a7 *R/seconds_to_hms.R
-f022e576eaed7cf44cdf7a40f97de12e *R/thisfile.R
+a4a16fa68d08debd34375d8e9d1d77af *R/thisfile.R
 5f6e46fb4880993407de4e692ba949f6 *R/tll.R
-071acb7cc23eb01c3bef8668f40e290e *R/vswitch.R
+5eb004e40214172a36d7c94a8a93bc1c *R/vswitch.R
 d41d8cd98f00b204e9800998ecf8427e *inst/staticdocs/index.R
 8ee7d0dcc36867f5cc5171951452c8c5 *man/coalesce.na-deprecated.Rd
 08595815c0f5370ea505e617287b8e32 *man/cut_format.Rd
@@ -49,4 +49,4 @@ d664c9871399b938fd81a35eb44aa987 *tests/testthat/test-cut.R
 ecf1b74d2e3ace0bd1e5b5ea6f5a04f6 *tests/testthat/test-gdiff.R
 0c1fa2adff0ec3025aef2096efa1a9b1 *tests/testthat/test-list_to_df.R
 31e7ee4f0b5f9e792cc8154c5a69dc2c *tests/testthat/test-thisfile.R
-b5e235a2c1dd3fe2870ad11812588369 *tests/testthat/test-vswitch.R
+043db9e73d9fb5ff924d76762de1d216 *tests/testthat/test-vswitch.R
